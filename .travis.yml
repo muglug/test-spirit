@@ -23,7 +23,6 @@ before_install:
     # disable default memory limit
     - echo memory_limit = 2G >> $INI
     - if [[ "$XDEBUG" = 'false' && -f $INI_DIR/xdebug.ini ]]; then phpenv config-rm xdebug.ini; fi
-    - composer clear-cache
 
 install:
     - travis_retry composer update ${DEFAULT_COMPOSER_FLAGS}
