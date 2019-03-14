@@ -1,0 +1,14 @@
+{
+    "name": "muglug/test-spirit",
+    "type": "project",
+    "require": {
+        "vimeo/psalm": "dev-spirited-away"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Brown",
+            "email": "github@muglug.com"
+        }
+    ]
+}

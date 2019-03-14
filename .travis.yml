@@ -1,0 +1,32 @@
+sudo: false
+dist: trusty
+language: php
+
+matrix:
+    include:
+        - php: 7.1
+
+env:
+    global:
+        - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-suggest --prefer-source"
+        - XDEBUG="false"
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+before_install:
+    # determine INI file
+    - export INI_DIR=~/.phpenv/versions/$(phpenv version-name)/etc/conf.d
+    - export INI=$INI_DIR/travis.ini
+    - if [[ "$TRAVIS_TAG" = '' ]]; then export COMPOSER_ROOT_VERSION=dev-master; fi
+    # disable default memory limit
+    - echo memory_limit = 2G >> $INI
+    - if [[ "$XDEBUG" = 'false' && -f $INI_DIR/xdebug.ini ]]; then phpenv config-rm xdebug.ini; fi
+    - composer clear-cache
+
+install:
+    - travis_retry composer update ${DEFAULT_COMPOSER_FLAGS}
+
+script:
+    - vendor/bin/psalm --spirit
