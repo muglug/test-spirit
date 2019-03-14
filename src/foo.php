@@ -5,4 +5,4 @@ $a = 6;
 
 strlen($a);
 
-echo $a + 7;
+echo $a + 8;
