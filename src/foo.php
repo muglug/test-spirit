@@ -28,4 +28,4 @@ foo("hello");
 
 
 
- function foo(string $s) : void {}
+ function foo(int $s) : void {}
