@@ -1,6 +1,31 @@
 <?php
 
-$a = 6;
+foo("hello");
 
-echo $a;
+/**
+     * @var array<
+     *   string,
+     *   array<\Closure(
+     *     StatementsSource,
+     *     string,
+     *     string,
+     *     array<PhpParser\Node\Arg>,
+     *     Context,
+     *     CodeLocation,
+     *     ?array<Type\Union>=,
+     *     ?string=,
+     *     ?string=
+     *   ) : ?Type\Union>
+     * >
+     */
 
+
+
+
+
+
+
+
+
+
+ function foo(string $s) : void {}
