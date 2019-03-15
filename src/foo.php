@@ -2,6 +2,5 @@
 
 $a = 6;
 
-
-strlen($a);
+echo $a;
 
