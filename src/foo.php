@@ -2,5 +2,5 @@
 
 $a = 6;
 
-echo $b;
+echo $a;
 
